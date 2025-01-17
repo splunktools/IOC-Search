@@ -1,0 +1,5 @@
+<nav search_view="search">
+  <view name="ioc_search" default='true' />
+  <view name="instructions" />
+  <view name="search"  />
+</nav>

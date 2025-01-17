@@ -1,0 +1,67 @@
+<dashboard version="1.1" theme="dark">
+  <label>Instructions</label>
+  <description>This page explains how to use the IOC Search</description>
+   <row>
+    <panel>
+      <title>What is the IOC Search</title>
+      <html>
+      <div>
+        <div>
+          <a href="ioc_search">IOC Search</a>
+            <p>The IOC Search is designed help locate Indicators of Compromise (IPs, domains, email addresses, hashes). </p>
+            <p>In order to use this you should understand what you can and cannot search. </p>
+            <p>For example you can use this to search for individual search terms -- based on <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/Eventsegmentationandsearching#Minor_breakers">Minor Breakers</a> and <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/Eventsegmentationandsearching#Major_breakers">Major Breakers</a>. You can only search terms which contain Minor Breakers. All terms are split with Major Breakers.</p>
+<p>You can also use wildcards with the IOC Search. For example if you wanted to search IPs in this range 10.5.1.0/24 which could be searched with this <code>10.5.1.*</code></p>
+<p></p><hr></hr>
+            
+<h1>Major breakers</h1>
+<p>Major breakers are a set of characters that are used to divide words, phrases, or terms in the event data into large tokens. Examples of major breakers are:</p>
+<p></p>
+<ul>
+<li>A space</li>
+<li>A newline</li>
+<li>A tab</li>
+<li>Angle brackets &#x003C; &#x003E;</li>
+<li>Square brackets [ ]</li>
+<li>Parenthesis ( )</li>
+<li>Curly brackets { }</li>
+<li>An exclamation point  !</li>
+<li>A question mark  ?</li>
+<li>A semicolon ;</li>
+<li>A comma ,</li>
+<li>Single and double quotation marks ' "</li>
+<li>The ampersand sign &#x0026;</li>
+<li>There are also multiple major breakers that use percent-encoding, primarily for reserved characters. These major breakers begin with a percent symbol followed by a code. For example, %21 is the code for the exclamation point ( ! ) character and %2526 is a double encoded ampersand ( &#x0026;&#x0026; ).</li>
+</ul>
+
+<hr></hr>
+
+<h1>Minor breakers</h1>
+<p>Minor breakers are a set of characters that are used to further divide large tokens into smaller tokens. Examples of minor breakers are:</p>
+<p></p>
+<ul>
+<li>A period .</li>
+<li>A forward slash /</li>
+<li>A double backslash \\</li>
+<li>A colon :</li>
+<li>The equal sign =</li>
+<li>The AT sign @</li>
+<li>The pound sign #</li>
+<li>The dollar sign $</li>
+<li>The percent sign %</li>
+<li>The underscore sign _</li>
+</ul>
+
+<p>To understand event segement and searching check out the <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/Eventsegmentationandsearching">search manual</a></p>
+<p>To understand how the TERM command is used in this app check out the <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/UseCASEandTERMtomatchphrases">search manual</a></p>
+<p>
+For a complete list of segmenters, see <a href="https://docs.splunk.com/Documentation/Splunk/latest/Admin/Segmentersconf">segmenters.conf</a> file in the Splunk Enterprise Admin Manual.</p>
+
+          </div>
+<div style="padding:10px;background-color:gray;"><b>Note:</b> Segmenters can be customized so validate your configuration to ensure that this will work in your environment</div>       
+          
+</div>
+      </html>
+    </panel>
+  </row>
+</dashboard>

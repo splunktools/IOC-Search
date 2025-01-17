@@ -1,0 +1,107 @@
+{
+  "version": "1.0",
+  "date": "2024-06-21T10:29:39.366853222Z",
+  "hashAlgorithm": "SHA-256",
+  "app": {
+    "id": 7436,
+    "version": "1.0.1",
+    "files": [
+      {
+        "path": "README",
+        "hash": "8530cde761a0042c5b237059cf82c2b859129414ed02eda02c4382f3914fff13"
+      },
+      {
+        "path": "bin/README",
+        "hash": "eaaa0ae11a829d5492934487b9628ba841d2678941afc4d979dee5ff19b7adbb"
+      },
+      {
+        "path": "metadata/default.meta",
+        "hash": "311d7caee97aa97236933ccd1ea665ede24c49517096ceccf2b27413f33116f7"
+      },
+      {
+        "path": "default/data/ui/nav/default.xml",
+        "hash": "590ae49e076c4581be18b0f51c46ea13cbca96ab886fa7df56e730dbd9ed8125"
+      },
+      {
+        "path": "default/data/ui/views/README",
+        "hash": "f75000f12510d242fc99decea9e7e5a46a1a8bef910d3d6f741797816b35034d"
+      },
+      {
+        "path": "default/data/ui/views/instructions.xml",
+        "hash": "165dd806e355bbc9778001e8c15c7ab9ec455fd029b48315ed4bca4d67b69e67"
+      },
+      {
+        "path": "default/data/ui/views/ioc_search.xml",
+        "hash": "20e4a2657d1972866cf50935c0c7e3a26ea6f5f615feb8cf39be1d2a0d8dcb97"
+      },
+      {
+        "path": "default/app.conf",
+        "hash": "f6b4802cb817e16fb51e8d13dda36428a24078dd3ad6a62d44acf848248fc1c5"
+      },
+      {
+        "path": "static/appIconAlt.png",
+        "hash": "0b29d79ae2773149be5c47da4f1a246de8027c6b304fdef7b88d5ee218704c0f"
+      },
+      {
+        "path": "static/appIcon_2x.png",
+        "hash": "41dee7100e55d0f3634ba383969e38b626d1f8027b8d75a1cad5c56da9b1b927"
+      },
+      {
+        "path": "static/appIcon.png",
+        "hash": "0b29d79ae2773149be5c47da4f1a246de8027c6b304fdef7b88d5ee218704c0f"
+      },
+      {
+        "path": "static/appIconAlt_2x.png",
+        "hash": "41dee7100e55d0f3634ba383969e38b626d1f8027b8d75a1cad5c56da9b1b927"
+      }
+    ]
+  },
+  "products": [
+    {
+      "platform": "splunk",
+      "product": "enterprise",
+      "versions": [
+        "8.0",
+        "8.1",
+        "8.2",
+        "9.0",
+        "9.1",
+        "9.2"
+      ],
+      "architectures": [
+        "x86_64"
+      ],
+      "operatingSystems": [
+        "windows",
+        "linux",
+        "macos",
+        "freebsd",
+        "solaris",
+        "aix"
+      ]
+    },
+    {
+      "platform": "splunk",
+      "product": "cloud",
+      "versions": [
+        "8.0",
+        "8.1",
+        "8.2",
+        "9.0",
+        "9.1",
+        "9.2"
+      ],
+      "architectures": [
+        "x86_64"
+      ],
+      "operatingSystems": [
+        "windows",
+        "linux",
+        "macos",
+        "freebsd",
+        "solaris",
+        "aix"
+      ]
+    }
+  ]
+}

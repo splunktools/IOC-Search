@@ -1,0 +1,70 @@
+<form version="1.1" theme="dark">
+  <label>IOC Search - Multiple IOCs</label>
+  <description></description>
+  <fieldset submitButton="true">
+    <input type="text" token="ioc" searchWhenChanged="true">
+      <label>IOCs - comma delimited</label>
+    </input>
+    <input type="time" token="field2">
+      <label></label>
+      <default>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+  </fieldset>
+  
+     <row>
+    <panel>
+      <html>
+      <div>
+        <div>
+          <a href="instructions">Instructions</a>
+            <p>The instructions provide details about how to use this dashboard and the types of searches that you can do. </p>
+          </div>
+</div>
+      </html>
+    </panel>
+  </row>
+  
+  
+  
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>| tstats count earliest(_time) as earliest_epoch latest(_time) as latest_epoch where index=* 
+    [| makeresults 
+    | eval data="$ioc$" 
+    | makemv delim="," data 
+    | eval data=mvmap(data,"TERM(".data.")") 
+    | eval command=mvjoin('data'," OR ") 
+    | return $command ]
+    by index, sourcetype 
+| eval earliest=strftime(earliest_epoch,"%Y-%m-%d %H:%M:%S") 
+| eval latest=strftime(latest_epoch,"%Y-%m-%d %H:%M:%S") 
+| eval latest_epoch=if(latest_epoch=earliest_epoch,latest_epoch+1,latest_epoch) 
+| eval earliest_epoch=earliest_epoch-1 
+| eval filter= 
+    [| makeresults 
+    | eval data="$ioc$" 
+    | makemv delim="," data 
+    | eval data=mvmap(data,"TERM(".data.")") 
+    | eval command=mvjoin('data'," OR ")
+    | eval command="\"".command."\""
+    | return $command ]
+| eval search="index=\"".index."\" sourcetype=\"".sourcetype."\" ".filter." earliest=".earliest_epoch." latest=".latest_epoch 
+| fields search index sourcetype count earliest latest</query>
+          <earliest>$field2.earliest$</earliest>
+          <latest>$field2.latest$</latest>
+        </search>
+        <option name="count">25</option>
+        <option name="drilldown">cell</option>
+        <option name="refresh.display">progressbar</option>
+        <drilldown>
+          <link target="_blank">search?q=$click.value$&amp;earliest=$field2.earliest$&amp;latest=$field2.latest$</link>
+        </drilldown>
+      </table>
+    </panel>
+  </row>
+</form>
